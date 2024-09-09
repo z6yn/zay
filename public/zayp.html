@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+    <link rel="stylesheet" href="./public/styles.css">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zay's Portfolio</title>
+    <!-- Google Fonts for sleek typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            /* font-family: 'Poppins', sans-serif; */
+            font-family: "Space Mono", monospace;
+            font-weight: 400;
+            font-style: normal;
+            background: #0d0d1f;
+            color: #c3c7e1;
+            overflow: auto;
+            scroll-behavior: smooth; /* Smooth scrolling */
+        }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Bricolage Grotesque', sans-serif; --font-sans-serif: 'Bricolage Grotesque', color: #CCFFFF; }
+
+        /* Reduced glowing text */
+        .glow-text {
+            color: #CCFFFF;
+            text-shadow: 0 0 3px #00ffff, 0 0 5px #00ffff;
+        }
+
+        /* Custom card hover effect */
+        .project-card {
+            background-color: rgba(25, 34, 56, 0.8);
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 255, 255, 0.7);
+        }
+
+        /* Improved background animation */
+        .animated-bg {
+            background: radial-gradient(circle at center, #0d0d1f, #162447 70%);
+            position: relative;
+            overflow: auto;
+        }
+
+        .glow-circle {
+            position: absolute;
+            border-radius: 50%;
+            width: 400px;
+            height: 400px;
+            background: rgba(0, 255, 255, 0.2);
+            filter: blur(60px);
+            animation: move 6s ease-in-out infinite alternate;
+        }
+
+        .glow-circle:nth-child(1) {
+            top: 20%;
+            left: 30%;
+        }
+
+        .glow-circle:nth-child(2) {
+            top: 60%;
+            right: 20%;
+        }
+
+        @keyframes move {
+            from {
+                transform: translateY(0) translateX(0);
+            }
+
+            to {
+                transform: translateY(30px) translateX(30px);
+            }
+        }
+
+        .neon-btn {
+            border: 2px solid #00ffff;
+            padding: 8px 16px;
+            color: #00ffff;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .neon-btn:hover {
+            background-color: #00ffff;
+            color: #0d0d1f;
+            box-shadow: 0 0 20px #00ffff;
+        }
+        @keyframes pulse {
+            0% {
+            transform: scale(1);
+            }
+            50% {
+            transform: scale(1.1);
+            }
+            100% {
+            transform: scale(1);
+            }
+        }
+        
+        .glow-circle {
+            animation: pulse 3s infinite;
+        }
+  
+    </style>
+</head>
+
+<body class="animated-bg">
+    <!-- Glowing circles in the background -->
+    <div class="glow-circle"></div>
+    <div class="glow-circle"></div>
+    <header class="bg-[#1e1e1e] py-4 px-6 flex items-center justify-between">
+        <div class="flex items-center gap-2">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6">
+            <polyline points="4 17 10 11 4 5"></polyline>
+            <line x1="12" y1="19" x2="20" y2="19"></line>
+          </svg>
+          <span class="text-lg font-bold">Z A Y.</span>
+        </div>
+        <nav class="flex items-center gap-4">
+          <a class="text-sm hover:underline" href="#abt">About</a>
+          <a class="text-sm hover:underline" href="#projects-section">Projects</a> <!-- Scrolls to Projects -->
+          <a class="text-sm hover:underline" href="#con">Contact</a>
+        </nav>
+      </header>
+      
+    <!-- Header Section -->
+    <main class="flex-1 px-6 py-12">
+    <section id="hero" class="flex flex-col items-center justify-center text-center gap-6 py-24" data-id="11">
+    <header class="lex flex-col items-center justify-center text-center gap-6 py-24">
+        <div class="space-y-2">
+        <h1 class="text-5xl font-bold animate-pulse color: #CCFFFF">Muhammed Zayan Sameer</h1>
+        <p class="mt-4 text-lg">Student | Entrepreneur | Tech Geek | Google Cloud Professional | Developer</p>
+        </div>
+         <!-- Added Buttons -->
+        <div class="flex gap-4 justify-center mt-6">
+            <a class="inline-flex items-center justify-center rounded-md bg-primary px-6 py-2 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 neon-btn" href="#projects-section">
+                View Projects
+            </a>
+            <a class="inline-flex items-center justify-center rounded-md border border-input bg-background px-6 py-2 text-sm font-medium shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50" href="#con">
+                Contact Me
+            </a>
+        </div>
+    </header>
+    </section>
+    </main>
+    <div></div>
+    <!-- Main Content -->
+    <main class="max-w-6xl mx-auto mt-12 p-8 bg-transparent shadow-lg rounded-lg">
+        <!-- About Me Section -->
+        <section id="abt">
+            <h2 class="text-4xl font-semibold mb-6 glow-text">About Me</h2>
+            <p class="text-lg leading-relaxed mb-8">
+                I'm Zay, a passionate student, entrepreneur, and certified Google Cloud Professional. With a deep interest in technology and innovation, I focus on building scalable solutions and exploring entrepreneurial ventures. I'm constantly seeking new challenges that push the boundaries of what's possible.
+            </p>
+        </section>
+
+        <!-- Skills Section -->
+        <section>
+            <h2 class="text-4xl font-semibold mb-6 glow-text">Skills</h2>
+            <ul class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-lg mb-8">
+                <li class="bg-gray-800 p-4 rounded-md shadow-md">Cloud Computing (Google Cloud Certified)</li>
+                <li class="bg-gray-800 p-4 rounded-md shadow-md">Python Programming</li>
+                <li class="bg-gray-800 p-4 rounded-md shadow-md">Web Development</li>
+                <li class="bg-gray-800 p-4 rounded-md shadow-md">SQL</li>
+                <li class="bg-gray-800 p-4 rounded-md shadow-md">UI Designing</li>
+                <li class="bg-gray-800 p-4 rounded-md shadow-md">Graphic Designing</li>
+            </ul>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects-section" class="mt-12">
+            <h2 class="text-4xl font-semibold mb-8 glow-text">My Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="project-card p-6 rounded-lg shadow-lg">
+                    <img src="/images/airzy.jpg" alt="Project 1" class="rounded-md mb-4">
+                    <h3 class="text-2xl font-semibold mb-2">AirZayM - Airline Reservation System</h3>
+                    <p class="text-lg mb-4">Developed a Python Program, which can be used to Check, Book, Modify Air Tickets using the program, it uses SQL database to store the customer details. and prints and e-mails the boarding pass to the customer.</p>
+                    <a href="https://example.com" class="text-blue-400 neon-btn">View Project</a>
+                </div>
+                <!-- Project 2 -->
+                <div class="project-card p-6 rounded-lg shadow-lg">
+                    <img src="/images/mrg.jpg" alt="Project 2" class="rounded-md mb-4">
+                    <h3 class="text-2xl font-semibold mb-2">Mr. Grocer</h3>
+                    <p class="text-lg mb-4">Built a full-stack e-commerce platform with Node.js, React, and MongoDB, featuring user authentication and secure payments.</p>
+                    <a href="https://example2.com" class="text-blue-400 neon-btn">View Project</a>
+                </div>
+                <!-- Project 3 -->
+                <div class="project-card p-6 rounded-lg shadow-lg">
+                    <img src="/images/plt.png" alt="Project 3" class="rounded-md mb-4">
+                    <h3 class="text-2xl font-semibold mb-2">Plynt</h3>
+                    <p class="text-lg mb-4">Created an IoT Based Smart Irrigation System, Which helps take care of our garden efficiently by being able to control the water flow, and getting the Moisture level and necessary details through the Application.</p>
+                    <a href="https://example3.com" class="text-blue-400 neon-btn">View Project</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="mt-12">
+            <h2 class="text-4xl font-semibold mb-8 glow-text">Testimonials</h2>
+            <div class="space-y-8">
+                <blockquote class="bg-gray-800 p-6 rounded-lg shadow-md text-lg">
+                    <p>"Zay is an exceptional tech enthusiast who constantly pushes the boundaries of cloud computing. His work ethic is unmatched." - John Doe, CEO of TechStart</p>
+                </blockquote>
+                <blockquote class="bg-gray-800 p-6 rounded-lg shadow-md text-lg">
+                    <p>"I've collaborated with Zay on several projects. His expertise in Google Cloud and AI is extraordinary." - Jane Smith, Founder of InnovateTech</p>
+                </blockquote>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+<section id="con" class="mt-12">
+    <h2 class="text-4xl font-semibold mb-4 glow-text">Contact Me</h2>
+    <p class="text-lg mb-6">If you'd like to collaborate or get in touch, please fill out the form below or reach out directly at <a href="mailto:zay@email.com" class="text-blue-400 underline hover:text-blue-600">zay@email.com</a>.</p>
+    <form action="https://formspree.io/f/manwkgyj" method="post" class="bg-gray-800 p-8 rounded-lg shadow-lg">
+        <div class="mb-4">
+            <label for="name" class="block text-lg font-semibold text-gray-300">Name</label>
+            <input type="text" id="name" name="name" required class="mt-1 block w-full px-3 py-2 border border-gray-700 rounded-md shadow-sm bg-gray-900 text-gray-300 placeholder-gray-500 focus:outline-none focus:ring-1 focus:ring-blue-500">
+        </div>
+        <div class="mb-4">
+            <label for="email" class="block text-lg font-semibold text-gray-300">Email</label>
+            <input type="email" id="email" name="email" required class="mt-1 block w-full px-3 py-2 border border-gray-700 rounded-md shadow-sm bg-gray-900 text-gray-300 placeholder-gray-500 focus:outline-none focus:ring-1 focus:ring-blue-500">
+        </div>
+        <div class="mb-4">
+            <label for="message" class="block text-lg font-semibold text-gray-300">Message</label>
+            <textarea id="message" name="message" rows="4" required class="mt-1 block w-full px-3 py-2 border border-gray-700 rounded-md shadow-sm bg-gray-900 text-gray-300 placeholder-gray-500 focus:outline-none focus:ring-1 focus:ring-blue-500"></textarea>
+        </div>
+        <button type="submit" class="inline-flex items-center justify-center rounded-md bg-primary px-6 py-2 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 neon-btn">
+            Send Message
+        </button>
+    </form>
+</section>
+
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="text-white text-center py-6 mt-16">
+        <p>&copy; 2024 Zay. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
