@@ -1,5 +1,5 @@
 module.exports = {
-  content: [
+  purge: [
     './index.html',
     './images/airzy.jpg', // Include all HTML files in the public folder
     './src/tailwind.config.js',
