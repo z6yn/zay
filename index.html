@@ -51,28 +51,28 @@
 .animated-bg {
     background: radial-gradient(circle at center, #0d0d1f, #162447 70%);
     position: relative;
-    overflow: visible; /* Ensure vertical scrolling works */
+    overflow: visible; 
 }
 
 .glow-circle {
-    position: fixed; /* Changed to fixed to make it scroll with the page */
+    position: fixed; 
     border-radius: 50%;
     width: 300px;
     height: 300px;
     background: rgba(0, 255, 255, 0.2);
     filter: blur(60px);
     animation: move 6s ease-in-out infinite alternate;
-    z-index: -1; /* Keep them behind content */
+    z-index: -1; 
 }
 
 .glow-circle:nth-child(1) {
     top: 20%;
-    left: 10%; /* Keep adjusted positioning */
+    left: 10%; 
 }
 
 .glow-circle:nth-child(2) {
     top: 60%;
-    right: 10%; /* Keep adjusted positioning */
+    right: 10%; 
 }
 
 @keyframes move {
@@ -136,7 +136,7 @@
             <span class="text-lg font-bold">Z A Y.</span>
         </div>
         
-        <!-- Responsive Navigation -->
+        
         <nav class="flex items-center gap-4 text-sm mt-2 sm:mt-0 flex-wrap">
             <a class="hover:underline" href="#abt">About</a>
             <a class="hover:underline" href="#projects-section">Projects</a>
@@ -145,16 +145,15 @@
     </header>
     
       
-    <!-- Header Section -->
+
     <main class="flex-1 px-6 py-12">
     <section id="hero" class="flex flex-col items-center justify-center text-center gap-6 py-24" data-id="11">
     <header class="lex flex-col items-center justify-center text-center gap-6 py-24">
         <div class="space-y-2">
         <h1 class="text-5xl font-bold animate-pulse color: #CCFFFF">Muhammed Zayan Sameer</h1>
-        <p class="mt-4 text-lg">Student | Entrepreneur | Tech Geek | Google Cloud Professional | Developer</p>
+        <p class="mt-4 text-lg">CSE Student | Tech-Geek | Google Certified Professional | Developer</p>
         </div>
         
-         <!-- Added Buttons -->
         <div class="flex gap-4 justify-center mt-6">
             <a class="inline-flex items-center justify-center rounded-md bg-primary px-6 py-2 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 neon-btn" href="#projects-section">
                 View Projects
@@ -163,29 +162,23 @@
                 Contact Me
             </a>
         </div>
-        <!-- Social Media Section -->
         
 
     </header>
 
     </section>
     </main>
-    <!-- Social Media Section -->
 
 
     <div></div>
     
-    <!-- Main Content -->
     <main class="max-w-6xl mx-auto mt-12 p-8 bg-transparent shadow-lg rounded-lg">
-        <!-- About Me Section -->
         <section id="abt">
             <h2 class="text-4xl font-semibold mb-6 glow-text">About Me</h2>
             <p class="text-lg leading-relaxed mb-8">
                 I'm Zay, a passionate student, entrepreneur, and certified Google Cloud Professional. With a deep interest in technology and innovation, I focus on building scalable solutions and exploring entrepreneurial ventures. I'm constantly seeking new challenges that push the boundaries of what's possible.
             </p>
         </section>
-
-        <!-- Skills Section -->
         <section>
             <h2 class="text-4xl font-semibold mb-6 glow-text">Skills</h2>
             <ul class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-lg mb-8">
@@ -197,8 +190,6 @@
                 <li class="bg-gray-800 p-4 rounded-md shadow-md">Graphic Designing</li>
             </ul>
         </section>
-
-        <!-- Projects Section -->
         <section id="projects-section" class="mt-12">
             <h2 class="text-4xl font-semibold mb-8 glow-text">My Projects</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -226,7 +217,6 @@
             </div>
         </section>
 
-        <!-- Testimonials Section -->
         <section class="mt-12">
             <h2 class="text-4xl font-semibold mb-8 glow-text">Testimonials</h2>
             <div class="space-y-8">
@@ -239,7 +229,6 @@
             </div>
         </section>
 
-        <!-- Contact Section -->
 <section id="con" class="mt-12">
     <h2 class="text-4xl font-semibold mb-4 glow-text">Contact Me</h2>
     <p class="text-lg mb-6">If you'd like to collaborate or get in touch, please fill out the form below or reach out directly at <a href="mailto:zayy.cloudd@gmail.com" class="text-blue-400 underline hover:text-blue-600">zayy.cloudd@gmail.com</a>.</p>
@@ -276,7 +265,7 @@
 </section>
     </main>
 
-    <!-- Footer Section -->
+
     <footer class="text-white text-center py-6 mt-16">
         <p>&copy; 2024 Zay. All rights reserved.</p>
     </footer>
