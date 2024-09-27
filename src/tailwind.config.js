@@ -7,7 +7,12 @@ module.exports = {
     './src/styles.css',        // Include all JS files in the src folder (optional if you use JS with Tailwind)
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        customColor: '#0d0d1f',
+      },
+  
+    },
   },
   plugins: [],
 }
