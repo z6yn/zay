@@ -6,15 +6,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zay's Portfolio</title>
-    <!-- Google Fonts for sleek typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
-        <!-- Add FontAwesome for social media icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
     
     <style>
         body {
@@ -25,17 +24,17 @@
             background: #0d0d1f;
             color: #c3c7e1;
             overflow: auto;
-            scroll-behavior: smooth; /* Smooth scrolling */
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+             /* Smooth scrolling */
         }
         h1, h2, h3, h4, h5, h6 { font-family: 'Bricolage Grotesque', sans-serif; --font-sans-serif: 'Bricolage Grotesque', color: #CCFFFF; }
 
-        /* Reduced glowing text */
         .glow-text {
             color: #CCFFFF;
             text-shadow: 0 0 3px #00ffff, 0 0 5px #00ffff;
         }
 
-        /* Custom card hover effect */
         .project-card {
             background-color: rgba(25, 34, 56, 0.8);
             backdrop-filter: blur(10px);
@@ -47,42 +46,50 @@
             box-shadow: 0 10px 30px rgba(0, 255, 255, 0.7);
         }
 
-        /* Improved background animation */
-        .animated-bg {
-            background: radial-gradient(circle at center, #0d0d1f, #162447 70%);
-            position: relative;
-            overflow: auto;
-        }
+ 
 
-        .glow-circle {
-            position: absolute;
-            border-radius: 50%;
-            width: 400px;
-            height: 400px;
-            background: rgba(0, 255, 255, 0.2);
-            filter: blur(60px);
-            animation: move 6s ease-in-out infinite alternate;
-        }
+.animated-bg {
+    background: radial-gradient(circle at center, #0d0d1f, #162447 70%);
+    position: relative;
+    overflow: visible; /* Ensure vertical scrolling works */
+}
 
-        .glow-circle:nth-child(1) {
-            top: 20%;
-            left: 30%;
-        }
+.glow-circle {
+    position: fixed; /* Changed to fixed to make it scroll with the page */
+    border-radius: 50%;
+    width: 300px;
+    height: 300px;
+    background: rgba(0, 255, 255, 0.2);
+    filter: blur(60px);
+    animation: move 6s ease-in-out infinite alternate;
+    z-index: -1; /* Keep them behind content */
+}
 
-        .glow-circle:nth-child(2) {
-            top: 60%;
-            right: 20%;
-        }
+.glow-circle:nth-child(1) {
+    top: 20%;
+    left: 10%; /* Keep adjusted positioning */
+}
 
-        @keyframes move {
-            from {
-                transform: translateY(0) translateX(0);
-            }
+.glow-circle:nth-child(2) {
+    top: 60%;
+    right: 10%; /* Keep adjusted positioning */
+}
 
-            to {
-                transform: translateY(30px) translateX(30px);
-            }
-        }
+@keyframes move {
+    from {
+        transform: translateY(0) translateX(0);
+    }
+
+    to {
+        transform: translateY(30px) translateX(30px);
+    }
+}
+
+.glow-circle {
+    animation: pulse 3s infinite;
+}
+
+  
 
         .neon-btn {
             border: 2px solid #00ffff;
@@ -109,32 +116,34 @@
             }
         }
         
-        .glow-circle {
-            animation: pulse 3s infinite;
-        }
-        
+
         
     </style>
 </head>
 
 <body class="animated-bg">
-    <!-- Glowing circles in the background -->
+    
+    <body class="overflow-x-hidden">
+
     <div class="glow-circle"></div>
     <div class="glow-circle"></div>
-    <header class="bg-[#1e1e1e] py-4 px-6 flex items-center justify-between">
+    <header class="bg-[#1e1e1e] py-4 px-6 sm:px-4 flex items-center justify-between flex-wrap">
         <div class="flex items-center gap-2">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6">
-            <polyline points="4 17 10 11 4 5"></polyline>
-            <line x1="12" y1="19" x2="20" y2="19"></line>
-          </svg>
-          <span class="text-lg font-bold">Z A Y.</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6">
+                <polyline points="4 17 10 11 4 5"></polyline>
+                <line x1="12" y1="19" x2="20" y2="19"></line>
+            </svg>
+            <span class="text-lg font-bold">Z A Y.</span>
         </div>
-        <nav class="flex items-center gap-4">
-          <a class="text-sm hover:underline" href="#abt">About</a>
-          <a class="text-sm hover:underline" href="#projects-section">Projects</a> <!-- Scrolls to Projects -->
-          <a class="text-sm hover:underline" href="#con">Contact</a>
+        
+        <!-- Responsive Navigation -->
+        <nav class="flex items-center gap-4 text-sm mt-2 sm:mt-0 flex-wrap">
+            <a class="hover:underline" href="#abt">About</a>
+            <a class="hover:underline" href="#projects-section">Projects</a>
+            <a class="hover:underline" href="#con">Contact</a>
         </nav>
-      </header>
+    </header>
+    
       
     <!-- Header Section -->
     <main class="flex-1 px-6 py-12">
